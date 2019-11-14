@@ -10,6 +10,9 @@ pedido,Quero dois xburgers pra viagem
 cardapio,Quais são as opções?
 pedido,Quero uma coca bem gelada
 cardapio,Pode me mostrar as opções?
+cardapio,Me mostra o que você tem
+cardapio,Quais são as opções?
+cardapio,Cardapio por favor 
 funcionario,Pode colocar uma mesa a mais aqui fazendo favor?
 pedido,Quero um xsalada sem salada
 pedido,Me da um xburger com 2 hamburgues
@@ -19,3 +22,5 @@ funcionario,me traz guardanapo
 conta,me traz uma cerveja e fecha a conta
 pedido,Quero dois xbaleia e uma coca cola litro
 pedido,Gostaria de um bagunça sem salada e um refrigerante
+conta,Fecha a conta aí patrão
+funcionario,Chama o atendimento fazendo favor
