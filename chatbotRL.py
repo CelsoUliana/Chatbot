@@ -25,7 +25,7 @@ y = []
 p = params.regressao()
 
 #   Leitura do dataset.
-with open('dataset.csv', newline='', encoding='utf-8') as csv_file:
+with open('dataset.csv', newline = '', encoding = 'utf-8') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
         y.append(row['inten'])
@@ -63,14 +63,14 @@ for train_index, test_index in loo.split(x):
 #   Metricas do modelo RL.
 print('\nAcuracia')
 print(accuracy_score(yi, y_pred))
-print(accuracy_score(yi, y_pred, normalize=False))
+print(accuracy_score(yi, y_pred, normalize = False))
 
 print('\nprecisao')
-print(precision_score(yi, y_pred, average='macro'))
-print(precision_score(yi, y_pred, average='micro'))
-print(precision_score(yi, y_pred, average='weighted'))
+print(precision_score(yi, y_pred, average = 'macro'))
+print(precision_score(yi, y_pred, average = 'micro'))
+print(precision_score(yi, y_pred, average = 'weighted'))
 
 print('\nrecall score')
-print(recall_score(yi, y_pred, average='macro'))
-print(recall_score(yi, y_pred, average='micro'))
-print(recall_score(yi, y_pred, average='weighted'))
+print(recall_score(yi, y_pred, average = 'macro'))
+print(recall_score(yi, y_pred, average = 'micro'))
+print(recall_score(yi, y_pred, average = 'weighted'))
