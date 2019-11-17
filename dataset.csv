@@ -1,4 +1,9 @@
 inten,texto
+conta,quanto ficou tudo?
+conta,quanto ficou o valor?
+conta,quanto ficou a conta
+cardapio,Me passa o cardapio
+cardapio,Passa o carrdapio
 cardapio,Gostaria de ver o cardapio por favor
 pedido,Me vê um x-bacon com uma coca cola 2l
 funcionario,Alguem poderia vir limpar a mesa?
@@ -24,3 +29,7 @@ pedido,Quero dois xbaleia e uma coca cola litro
 pedido,Gostaria de um bagunça sem salada e um refrigerante
 conta,Fecha a conta aí patrão
 funcionario,Chama o atendimento fazendo favor
+funcionario,Uma cadeira mais aqui
+funcionario,Duas cadeiras a mais aqui faz favor
+pedido,Me ve dois de frango um baguncinha e um suco de 600ml
+pedido,Quero 3 xburguers e duas coca lata

@@ -1,0 +1,50 @@
+Para o knn e nesse dataset
+temos que:
+
+Acuracia
+0.8823529411764706 (normalizada)
+30 (true)
+
+precisao
+0.8944444444444445 (macro)
+0.8823529411764706 (micro)
+0.9006535947712418 (weighted)
+
+recall score
+0.8616071428571428 (macro)
+0.8823529411764706 (micro)
+0.8823529411764706 (weighted)
+
+para a regressão logistica e o nosso dataset
+temos que:
+
+Acuracia
+0.9411764705882353 (normalizada)
+32 (true)
+
+precisao
+0.95 (macro)
+0.9411764705882353 (micro)
+0.9529411764705882
+
+recall score
+0.9285714285714286 (macro)
+0.9411764705882353 (micro)
+0.9411764705882353 (weighted)
+
+para a árvore de decisão e o nosso dataset
+temos que:
+
+Acuracia
+0.7352941176470589 (normalizada)
+25 (true)
+
+precisao
+0.7136363636363636 (macro)
+0.7352941176470589 (micro)
+0.7481283422459893 (weighted)
+
+recall score
+0.6964285714285714 (macro)
+0.7352941176470589 (micro)
+0.7352941176470589 (weighted)
