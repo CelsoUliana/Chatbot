@@ -15,14 +15,15 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import precision_score
 from sklearn.model_selection import LeaveOneOut
 from sklearn.model_selection import GridSearchCV
-from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+#   x(texto) e y(classe)
 x = []
 y = []
 
 #   Leitura de parâmetros do modulo.
-p = params.regressao()
+p = params.knn()
 
 #   Leitura do dataset.
 with open('dataset.csv', newline = '', encoding = 'utf-8') as csv_file:
@@ -43,24 +44,26 @@ loo.get_n_splits(x)
 yi = np.array(y)
 y_pred = []
 
-#   Usando leave one outs para treinar a RL
+#   Usando leave one outs para treinar o KNN.
 for train_index, test_index in loo.split(x):
     X_train, X_test = x[train_index], x[test_index]
     y_train, y_test = yi[train_index], yi[test_index]
 
     #   Fine-tuning dos parâmetros
-    grid_search = GridSearchCV(LogisticRegression(), p, scoring = 'accuracy', cv = 5, iid = False)
+    #   p é o param grid, cv = 5 é o novo default de cross validation interno e iid = False pois warning.
+    grid_search = GridSearchCV(KNeighborsClassifier(), p, scoring = 'accuracy', cv = 5, iid = False)
     grid_search.fit(X_train, y_train)
 
-    #   Modelo
-    model = LogisticRegression(random_state = grid_search.best_params_['random_state'], C = grid_search.best_params_['C'], multi_class = grid_search.best_params_['multi_class'],
-    solver = grid_search.best_params_['solver'], class_weight = grid_search.best_params_['class_weight'])
+    #   Modelo KNN
+    model = KNeighborsClassifier(metric = grid_search.best_params_['metric'], n_neighbors = grid_search.best_params_['n_neighbors'], weights = grid_search.best_params_['weights'])
 
+    #   Fit no modelo com x_train e y_train e adicionando o valor
+    #   predito numa lista de y_pred.
     model.fit(X_train, y_train)
     val = model.predict(X_test)
     y_pred.append(val)
 
-#   Metricas do modelo RL.
+#   Metricas do modelo KNN que estão no txt.
 print('\nAcuracia')
 print(accuracy_score(yi, y_pred))
 print(accuracy_score(yi, y_pred, normalize = False))
