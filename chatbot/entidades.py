@@ -1,6 +1,60 @@
+###
+#   Celso Antonio Uliana Junior - Nov 2019
+###
 dic = {
-    'num': ['um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito','nove','dez', 'uma', 'duas'],
-    'nums': ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'],
-    'prato': ['xburger', 'xburguers', 'xtudo', 'xtudos'],
-    'bebida': ['coca', 'coca-cola', 'guarana', 'agua', 'cocas', 'guaranas', 'aguas']
+    'num': ['um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito','nove','dez', 'uma', 'duas', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+    'pratos': ['xbuger','xburger','x-burger', 'xburguers', 'x-burgers', 'xtudo', 'x-tudo', 'xtudos', 'x-tudos', 'xegg', 'x-egg', 'xeggs', 'x-eggs'],
+    'bebidas': ['coca', 'coca-cola', 'guarana', 'agua', 'cocas', 'guaranas', 'aguas', 'coca', 'coca cola', 'coca colas', 'guaraná', 'guaranás']
+}
+
+enum = {
+    'um' : 1,
+    'uma' : 1,
+    'dois': 2,
+    'tres' : 3,
+    'quatro': 4,
+    'cinco' : 5,
+    'seis' : 6,
+    'sete' : 7,
+    'oito' : 8,
+    'nove' : 9,
+    'dez': 10, 
+    'uma': 1, 
+    'duas' : 2,
+    '1': 1, 
+    '2': 2, 
+    '3': 3, 
+    '4': 4, 
+    '5': 5, 
+    '6': 6, 
+    '7': 7, 
+    '8': 8, 
+    '9': 9, 
+    '10' : 10,
+    'guaraná' : 'guarana',
+    'guaranás' : 'guarana',
+    'coca' : 'coca-cola',
+    'coca cola': 'coca-cola',
+    'coca colas': 'coca-cola',
+    'xburger': 'x-burger',
+    'x-burger': 'x-burger', 
+    'xburguers': 'x-burger', 
+    'x-burgers': 'x-burger', 
+    'xtudo' : 'x-tudo', 
+    'x-tudo': 'x-tudo', 
+    'xtudos': 'x-tudo', 
+    'x-tudos': 'x-tudo', 
+    'xegg': 'x-egg', 
+    'x-egg': 'x-egg', 
+    'xeggs': 'x-egg',
+    'x-eggs': 'x-egg',
+    'coca' : 'coca-cola', 
+    'coca-cola': 'coca-cola', 
+    'guarana': 'guarana', 
+    'agua': 'agua', 
+    'cocas': 'coca-cola', 
+    'guaranas': 'guarana', 
+    'aguas': 'aga',
+    'xbuger' : 'x-burger'
+
 }
