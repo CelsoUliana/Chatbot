@@ -72,8 +72,6 @@ classificador.fit(x, y)
 print('Pronto, agora é só usar!!')
 
 while(True):
-
-    print(pedido)
     
     #   Flag simboliza nova conversa se 1, e 0 se no meio de uma conversa.
     if flag:
@@ -108,7 +106,7 @@ while(True):
         if valor == 0:
             print('Voce ainda não pediu nada!')
 
-        #   Se valor não 0, foi feito algo e será printado e finalizado, flag setada para 1 e variavel pedido limpa.        
+        #   Se valor não 0, foi feito algo e será printado e finalizado, flag setada para 1 e variavel pedido limpa(simulando uma nova conversa).        
         else:
 
             print(random.choice(respostas['conta']), valor)
