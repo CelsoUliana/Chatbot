@@ -3,11 +3,16 @@
 ###
 dic = {
     'num': ['um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito','nove','dez', 'uma', 'duas', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
-    'pratos': ['xbuger','xburger', 'xburgers','x-burger', 'xburguers', 'x-burgers', 'xtudo', 'x-tudo', 'xtudos', 'x-tudos', 'xegg', 'x-egg', 'xeggs', 'x-eggs'],
-    'bebidas': ['coca', 'coca-cola', 'guarana', 'agua', 'cocas', 'guaranas', 'aguas', 'coca', 'coca cola', 'coca colas', 'guaraná', 'guaranás']
+    'pratos': ['xbuger','xburger', 'xburgers','x-burger', 'xburguers', 'x-burgers', 'xtudo', 'x-tudo',
+    'xtudos', 'x-tudos', 'xegg', 'x-egg', 'xeggs', 'x-eggs', 'x burger', 'x burgers'],
+    'bebidas': ['coca', 'coca-cola', 'guaraná', 'guaranás', 'guarana', 'água', 'águas', 'agua', 'cocas', 'guaranas', 'aguas', 'coca', 'coca cola', 'coca colas', 'guaraná', 'guaranás']
 }
 
 enum = {
+    'x burger' : 'x-burger',
+    'x burgers' : 'x-burger',
+    'água' : 'água',
+    'águas' : 'água',
     'xburgers' : 'x-burger',
     'um' : 1,
     'uma' : 1,
@@ -32,8 +37,8 @@ enum = {
     '8': 8, 
     '9': 9, 
     '10' : 10,
-    'guaraná' : 'guarana',
-    'guaranás' : 'guarana',
+    'guaraná' : 'guaraná',
+    'guaranás' : 'guaraná',
     'coca' : 'coca-cola',
     'coca cola': 'coca-cola',
     'coca colas': 'coca-cola',
@@ -51,11 +56,10 @@ enum = {
     'x-eggs': 'x-egg',
     'coca' : 'coca-cola', 
     'coca-cola': 'coca-cola', 
-    'guarana': 'guarana', 
-    'agua': 'agua', 
+    'guarana': 'guaraná', 
+    'agua': 'água', 
     'cocas': 'coca-cola', 
-    'guaranas': 'guarana', 
-    'aguas': 'agua',
+    'guaranas': 'guaraná', 
+    'aguas': 'água',
     'xbuger' : 'x-burger'
-
 }

@@ -9,19 +9,12 @@ Melhor modelo entre os 3 foi o de regressão logistica.
 de acordo com o comparativo no comparação.txt (que uso os prints de cada um dos chatbot(modelos))
 
 
-## Integração.
-
-Utilizado com twilio.
-
-Primeiro passo: Cadastro (Profissional ou teste) na site. Gerar auth token.
-
-Setar o token como variável de ambiente. no windows:
-
-cmd:
-set TWILIO_ACCOUNT_SID=ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-set TWILIO_AUTH_TOKEN=your_auth_token
-
-PowerShell:
-$Env:TWILIO_ACCOUNT_SID="ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-$Env:TWILIO_AUTH_TOKEN="your_auth_token"
-
+## Notas sobre o trabalho
+Problemas encontrados: Integração com o Telegram(É possível receber e classificar, porém, acontece um comportamento estranho na hora de enviar)
+ 
+Palavras que estão uma dentro da outra, como por exemplo água e água com gás, do jeito que o etiquetador de entidades funciona
+água com gás irá ser mapeada dentro de água também.
+ 
+Para adicionar novos itens ao cardápio, querer um trabalho manual grande, entidades do usuário (xburger) para entidades reais(x-burger)
+que estão presente no cardápio.
+Possivelmente seria melhor utilizar um banco de dados(?).

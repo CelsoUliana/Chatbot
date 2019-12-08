@@ -9,8 +9,8 @@ dic = {
     },
     'Bebidas' : {
         'coca-cola' : 5,
-        'guarana'   : 4,
-        'agua'      : 3
+        'guaraná'   : 4,
+        'água'      : 3
     } 
 }
 
@@ -19,6 +19,6 @@ mapeador = {
     'x-tudo'    : 25,
     'x-egg'     : 20,
     'coca-cola' : 5,
-    'guarana'   : 4,
-    'agua'      : 3
+    'guaraná'   : 4,
+    'água'      : 3
 }

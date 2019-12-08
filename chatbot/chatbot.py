@@ -126,7 +126,7 @@ while(True):
 
 
     if intencao == 'pedido':
-        #   Reconhece as entidades basicas, igual à descrição do trabalho
+        #   Reconhece as entidades basicas, igual à descrição do trabalho.
         pedido_local = funcoes.reconhece_entidades(etiquetador, texto)
 
         #   Caso tenha um matching perfeito, ou seja, todos pedidos tenham seus respectivos numeros(está ordenado), mapeia.
@@ -135,6 +135,7 @@ while(True):
             #   Essa função transforma por exemplo (xegg -> x-egg(como está no cardapio)) e dá seu valor, e bota tudo no pedido.
             funcoes.mapeia_itens(pedido_local, mapeador, pedido)
             print(random.choice(respostas['pedido']))
+            
         else:
             print(random.choice(respostas['erro']))
 

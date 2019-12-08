@@ -2,11 +2,11 @@
 #   Celso Antonio Uliana Junior - Nov 2019
 ###
 dic = {
-    'conta' : ['Aqui está o valor da conta: ', 'A conta deu: ', 'O valor do pedido foi:'],
-    'pedido' : ['seu pedido foi anotado com sucesso', 'anotamos seu pedido', 'seu pedido foi anotado'],
-    'erro' : ['Não foram encontrado esses itens no carpadio', 'Esses itens não existem no cardapio', 'Pedido não foi encontrado nas nossas opções', 'Não foi entendido a quantidade do pedido, por favor peça novamente.'],
+    'conta' : ['Aqui está o valor da conta: ', 'A conta deu: ', 'O valor do pedido foi: '],
+    'pedido' : ['seu pedido foi anotado com sucesso. Algo mais?', 'anotamos seu pedido. Algo mais?', 'seu pedido foi anotado. Algo mais?'],
+    'erro' : ['Não foram encontrado esses itens no carpadio.', 'Esses itens não existem no cardapio.', 'Pedido não foi encontrado nas nossas opções.', 'Não foi entendido a quantidade do pedido, por favor peça novamente.'],
     'cardapio': ['Estas são nossas opções:', 'Aqui está o cardapio:', 'Temos as seguinte opções:'],
-    'funcionario': ['Estamos mandando um funcionario aí nesse momento.', 'Alguem irá ajudar em breve', 'Um funcionario está a caminho'],
+    'funcionario': ['Estamos mandando um funcionario aí nesse momento.', 'Alguem irá ajudar em breve.', 'Um funcionario já está a caminho.'],
     'despedida' : {
         'manha' : ['Tenha um bom dia, e volte sempre!!', 'Agradecemos a visita, tenha um bom dia!', 'Volte sempre!'],
         'tarde' : ['Tenha uma boa tarde, e volte sempre!!', 'Agradecemos a visita, tenha uma bom tarde!', 'Volte sempre!'],
