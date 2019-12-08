@@ -34,4 +34,3 @@ def mapeia_itens(pedido_local, mapeador, pedido):
             pedido[chave] = mapeador[lista_numerica[i]]
         else:
             pedido[chave] = mapeador[lista_numerica[i]] + pedido[chave]
-

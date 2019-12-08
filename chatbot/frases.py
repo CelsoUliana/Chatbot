@@ -3,7 +3,7 @@
 ###
 dic = {
     'conta' : ['Aqui está o valor da conta: ', 'A conta deu: ', 'O valor do pedido foi:'],
-    'pedido' : [],
+    'pedido' : ['seu pedido foi anotado com sucesso', 'anotamos seu pedido', 'seu pedido foi anotado'],
     'erro' : ['Não foram encontrado esses itens no carpadio', 'Esses itens não existem no cardapio', 'Pedido não foi encontrado nas nossas opções', 'Não foi entendido a quantidade do pedido, por favor peça novamente.'],
     'cardapio': ['Estas são nossas opções:', 'Aqui está o cardapio:', 'Temos as seguinte opções:'],
     'funcionario': ['Estamos mandando um funcionario aí nesse momento.', 'Alguem irá ajudar em breve', 'Um funcionario está a caminho'],

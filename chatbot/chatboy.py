@@ -15,6 +15,9 @@ import entidades
 import datetime as dt
 import param_grid as params
 
+#   Integração Telegram
+from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
+
 from sklearn.metrics import recall_score
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import precision_score
@@ -22,6 +25,31 @@ from sklearn.model_selection import LeaveOneOut
 from sklearn.model_selection import GridSearchCV
 from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
+
+
+#   Funções bot telegram.
+def start(bot, update):
+    response_message = "Olá."
+    bot.send_message(
+        chat_id=update.message.chat_id,
+        text=response_message
+    )
+
+
+def responder(bot, update, mensagem):
+     bot.send_message(
+        chat_id=update.message.chat_id,
+        text=mensagem
+    )
+
+
+def unknown(bot, update):
+    response_message = "Não foi escrito o \\falar, não reconhecido"
+    bot.send_message(
+        chat_id=update.message.chat_id,
+        text=response_message
+    )
+
 
 #   x(texto), y(classe), flag para a conversa e hora do dia atual.
 x = []

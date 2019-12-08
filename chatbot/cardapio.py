@@ -10,6 +10,7 @@ dic = {
     'bebidas' : {
         'coca-cola' : 5,
         'guarana'   : 4,
+        'agua'      : 3
     } 
 }
 
