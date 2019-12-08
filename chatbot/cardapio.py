@@ -2,12 +2,12 @@
 #   Celso Antonio Uliana Junior - Nov 2019
 ###
 dic = {
-    'pratos' :{
-        'x-burger'  : 19.0,
+    'Hamburguers' :{
+        'x-burger'  : 17.5,
         'x-tudo'    : 25,
         'x-egg'     : 20
     },
-    'bebidas' : {
+    'Bebidas' : {
         'coca-cola' : 5,
         'guarana'   : 4,
         'agua'      : 3
@@ -15,9 +15,10 @@ dic = {
 }
 
 mapeador = {
-    'x-burger'  : 19.0,
+    'x-burger'  : 17.5,
     'x-tudo'    : 25,
     'x-egg'     : 20,
     'coca-cola' : 5,
     'guarana'   : 4,
+    'agua'      : 3
 }

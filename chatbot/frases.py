@@ -13,7 +13,7 @@ dic = {
         'noite': ['Tenha uma boa noite, e volte sempre!!', 'Agradecemos a visita, tenha uma boa noite!', 'Volte sempre!'],
     },
     'cumprimento': {
-        'manha' : ['Bom dia! O que deseja?', 'Bom dia Senhor(a), o que gostaria?', 'Bom dia Patrão, qual o seu pedido?', 'Bom dia, temos ótimas opções para lanchar'],
+        'manha' : ['Bom dia! O que deseja?', 'Bom dia Senhor(a), o que gostaria?', 'Bom dia Patrão, qual o seu pedido?', 'Bom dia, temos ótimas opções para lanchar.'],
         'tarde' : ['Boa tarde! Patrão', 'Boa tarde, o que deseja?', 'Boa tarde, é uma ótima tarde para comer'],
         'noite' : ['Boa noite! Cliente, O que deseja?', 'Boa noite, temos ótimas opções para lanchar']
     }

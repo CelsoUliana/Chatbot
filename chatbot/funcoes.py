@@ -1,6 +1,8 @@
 ###
 #   Celso Antonio Uliana Junior - Nov 2019
 ###
+
+#   Reconhece entidades, e mapeia elas num dicionario
 def reconhece_entidades(dic, texto):
     dic_resultado = {}
     palavras = texto.split()
@@ -14,7 +16,7 @@ def reconhece_entidades(dic, texto):
 
     return dic_resultado
             
-
+#   Busca se uma palavra está em um dicionario(que contem listas)
 def busca_dict(dic, palavra):
     for chave, valor in dic.items():
         if palavra in valor:
@@ -23,6 +25,7 @@ def busca_dict(dic, palavra):
             return chave, palavra
     return None
 
+#   Dado entidades, mapeia elas em entidades reais (xburger -> x-burger), onde são reconhecidas no cardapio
 def mapeia_itens(pedido_local, mapeador, pedido):
     lista_numerica = pedido_local['num']
     lista_pedidos = pedido_local['pedidos']

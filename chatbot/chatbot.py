@@ -15,9 +15,6 @@ import entidades
 import datetime as dt
 import param_grid as params
 
-#   Integração Telegram
-from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
-
 from sklearn.metrics import recall_score
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import precision_score
@@ -27,38 +24,12 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-#   Funções bot telegram.
-def start(bot, update):
-    response_message = "Olá."
-    bot.send_message(
-        chat_id=update.message.chat_id,
-        text=response_message
-    )
-
-
-def responder(bot, update, mensagem):
-     bot.send_message(
-        chat_id=update.message.chat_id,
-        text=mensagem
-    )
-
-
-def unknown(bot, update):
-    response_message = "Não foi escrito o \\falar, não reconhecido"
-    bot.send_message(
-        chat_id=update.message.chat_id,
-        text=response_message
-    )
-
-
 #   x(texto), y(classe), flag para a conversa e hora do dia atual.
 x = []
 y = []
 flag = 1
 pedido = {}
 hora = dt.datetime.today().hour
-
-print(hora)
 
 #   Leitura de parâmetros do modulo.
 p = params.regressao()
@@ -96,9 +67,7 @@ solver = grid_search.best_params_['solver'], class_weight = grid_search.best_par
 
 classificador.fit(x, y)
 
-
 print('Pronto, agora é só usar!!')
-
 
 while(True):
 
@@ -113,6 +82,7 @@ while(True):
         #   boa noite
         if hora > 18:
             print(random.choice(respostas['cumprimento']['noite']))
+
     flag = 0
 
     texto = input()
@@ -127,25 +97,31 @@ while(True):
             for chave in pedido:
                 valor = valor + cardapio.mapeador[chave] * pedido[chave]
 
-        print(random.choice(respostas['conta']), valor)
+        if valor == 0:
+            print('Voce ainda não pediu nada!')
+        
+        else:
 
-        if hora > 6 and hora < 12:
-            print(random.choice(respostas['despedida']['manha']))
+            print(random.choice(respostas['conta']), valor)
 
-        if hora > 12 and hora < 18:
-            print(random.choice(respostas['despedida']['tarde']))
+            if hora > 6 and hora < 12:
+                print(random.choice(respostas['despedida']['manha']))
 
-        if hora > 18 or hora >= 0 and hora < 6:
-            print(random.choice(respostas['despedida']['noite']))
+            if hora > 12 and hora < 18:
+                print(random.choice(respostas['despedida']['tarde']))
 
-        #   Limpeza de variaveis relacionadas ao uso, simulando o termino de uma conversa.
-        flag = 1
-        pedido = {}
+            if hora > 18 or hora >= 0 and hora < 6:
+                print(random.choice(respostas['despedida']['noite']))
+
+            #   Limpeza de variaveis relacionadas ao uso, simulando o termino de uma conversa.
+            flag = 1
+            pedido = {}
 
     if intencao == 'pedido':
         pedido_local = funcoes.reconhece_entidades(etiquetador, texto)
         if((pedido_local is not None) and ('num' in pedido_local) and ('pedidos' in pedido_local)):
             funcoes.mapeia_itens(pedido_local, mapeador, pedido)
+            print(random.choice(respostas['pedido']))
         else:
             print(random.choice(respostas['erro']))
 
