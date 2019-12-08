@@ -24,14 +24,14 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-#   x(texto), y(classe), flag para a conversa e hora do dia atual.
+#   x(texto), y(classe), flag para a conversa, variavel global pedido(dicionario) e hora do dia atual.
 x = []
 y = []
 flag = 1
 pedido = {}
 hora = dt.datetime.today().hour
 
-#   Leitura de parâmetros do modulo.
+#   Leitura de parâmetros do modulo para fine-tuning.
 p = params.regressao()
 
 #   Cardapio e entidades e frases de resposta.
@@ -57,11 +57,13 @@ loo.get_n_splits(x)
 
 print('Aguarde, o bot está sendo treinado...')
 
+#   Executar o grid_search com os parametros.
 grid_search = GridSearchCV(LogisticRegression(), p, scoring = 'accuracy', cv = loo, iid = False)
 grid_search.fit(x, y)
 
-print('Acuracia do modelo =~ ', grid_search.best_score_)
+#print('Acuracia do modelo =~ ', grid_search.best_score_)
 
+#   Fazer o fine-tuning do modelo
 classificador = LogisticRegression(random_state = grid_search.best_params_['random_state'], C = grid_search.best_params_['C'], multi_class = grid_search.best_params_['multi_class'],
 solver = grid_search.best_params_['solver'], class_weight = grid_search.best_params_['class_weight'])
 
@@ -71,6 +73,9 @@ print('Pronto, agora é só usar!!')
 
 while(True):
 
+    print(pedido)
+    
+    #   Flag simboliza nova conversa se 1, e 0 se no meio de uma conversa.
     if flag:
         #   bom dia
         if hora > 6 and hora < 12:
@@ -85,6 +90,7 @@ while(True):
 
     flag = 0
 
+    #   Lê input, transforma em BOW e prediz.
     texto = input()
     inst = vectorizer.transform([texto])
     intencao = classificador.predict(inst)
@@ -93,13 +99,16 @@ while(True):
         
         valor = 0
 
+        #   Calcula o valor total do pedido.
         if pedido is not None:
             for chave in pedido:
                 valor = valor + cardapio.mapeador[chave] * pedido[chave]
 
+        #   Caso pedido não vazio e valor 0
         if valor == 0:
             print('Voce ainda não pediu nada!')
-        
+
+        #   Se valor não 0, foi feito algo e será printado e finalizado, flag setada para 1 e variavel pedido limpa.        
         else:
 
             print(random.choice(respostas['conta']), valor)
@@ -117,9 +126,15 @@ while(True):
             flag = 1
             pedido = {}
 
+
     if intencao == 'pedido':
+        #   Reconhece as entidades basicas, igual à descrição do trabalho
         pedido_local = funcoes.reconhece_entidades(etiquetador, texto)
+
+        #   Caso tenha um matching perfeito, ou seja, todos pedidos tenham seus respectivos numeros(está ordenado), mapeia.
         if((pedido_local is not None) and ('num' in pedido_local) and ('pedidos' in pedido_local)):
+
+            #   Essa função transforma por exemplo (xegg -> x-egg(como está no cardapio)) e dá seu valor, e bota tudo no pedido.
             funcoes.mapeia_itens(pedido_local, mapeador, pedido)
             print(random.choice(respostas['pedido']))
         else:
@@ -127,11 +142,14 @@ while(True):
 
 
     if intencao == 'cardapio':
+
+        #   Itera pelo cardapio e imprime as chaves(produtos) e valor.
         print(random.choice(respostas['cardapio']))
         for sessao in card:
             print('------- ', sessao, ' ----------')
             for item in card[sessao]:
                 print('\t', item, ' \tR$:', card[sessao][item])
 
+    #   Resposta de funcionario.
     if intencao == 'funcionario':
        print(random.choice(respostas['funcionario']))
