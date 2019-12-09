@@ -4,8 +4,8 @@
 dic = {
     'pedido_frase' : ['saindo.', 'pra já.'],
     'conta' : ['Aqui está o valor da conta: ', 'A conta deu: ', 'O valor do pedido foi: '],
-    'pedido' : ['seu pedido foi anotado com sucesso. Algo mais?', 'anotamos seu pedido. Algo mais?', 'seu pedido foi anotado. Algo mais?'],
-    'erro' : ['Não foram encontrado esses itens no carpadio.', 'Esses itens não existem no cardapio.', 'Pedido não foi encontrado nas nossas opções.', 'Não foi entendido a quantidade do pedido, por favor peça novamente.'],
+    'pedido' : ['O garçom não entendeu, o pedido, por favor peça novamente','seu pedido foi anotado com sucesso. Algo mais?', 'anotamos seu pedido. Algo mais?', 'seu pedido foi anotado. Algo mais?'],
+    'erro' : ['Não foram encontrado esses itens no cardapio.', 'Esses itens não existem no cardapio.', 'Pedido não foi encontrado nas nossas opções.', 'Não foi entendido a quantidade do pedido, por favor peça novamente.'],
     'cardapio': ['Estas são nossas opções:', 'Aqui está o cardapio:', 'Temos as seguinte opções:'],
     'funcionario': ['Estamos mandando um funcionario aí nesse momento.', 'Alguem irá ajudar em breve.', 'Um funcionario já está a caminho.'],
     'despedida' : {
