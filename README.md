@@ -8,6 +8,16 @@ https://github.com/CelsoUliana/Chatbot
 Melhor modelo entre os 3 foi o de regressão logistica.
 de acordo com o comparativo no comparação.txt (que uso os prints de cada um dos chatbot(modelos))
 
+Para executar, extraia os conteudos da pasta chatbot em uma pasta local.
+
+Depois:
+    $ cd chatbot
+
+Instalar dependecias: 
+    $ pip install sklearn
+
+Depois, rode com:
+    $ python chatbot.py
 
 ## Notas sobre o trabalho
 Problemas encontrados: Integração com o Telegram(É possível receber e classificar, porém, acontece um comportamento estranho na hora de enviar)

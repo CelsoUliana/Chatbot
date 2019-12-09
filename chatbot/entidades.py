@@ -4,11 +4,16 @@
 dic = {
     'num': ['um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito','nove','dez', 'uma', 'duas', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
     'pratos': ['xbuger','xburger', 'xburgers','x-burger', 'xburguers', 'x-burgers', 'xtudo', 'x-tudo',
-    'xtudos', 'x-tudos', 'xegg', 'x-egg', 'xeggs', 'x-eggs', 'x burger', 'x burgers'],
+    'xtudos', 'x-tudos', 'xegg', 'x-egg', 'xeggs', 'x-eggs', 'x burger', 'x burgers', 'x tudo', 'x tudos',
+    'x egg', 'x eggs'],
     'bebidas': ['coca', 'coca-cola', 'guaraná', 'guaranás', 'guarana', 'água', 'águas', 'agua', 'cocas', 'guaranas', 'aguas', 'coca', 'coca cola', 'coca colas', 'guaraná', 'guaranás']
 }
 
 enum = {
+    'x egg' : 'x-egg',
+    'x eggs' : 'x-egg',
+    'x tudo' : 'x-tudo',
+    'x tudos' : 'x-tudo',
     'x burger' : 'x-burger',
     'x burgers' : 'x-burger',
     'água' : 'água',

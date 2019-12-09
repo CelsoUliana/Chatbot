@@ -25,15 +25,28 @@ def busca_dict(dic, palavra):
             return chave, palavra
     return None
 
-#   Dado entidades, mapeia elas em entidades reais (xburger -> x-burger), onde são reconhecidas no cardapio
+#   Dado entidades, mapeia elas em entidades reais (xburger -> x-burger), onde são reconhecidas no cardapio 
 def mapeia_itens(pedido_local, mapeador, pedido):
     lista_numerica = pedido_local['num']
     lista_pedidos = pedido_local['pedidos']
-    if len(lista_numerica) != len(lista_pedidos):
-        return
+ 
     for i in range(len(lista_pedidos)):
         chave = mapeador[lista_pedidos[i]]
         if chave not in pedido:
             pedido[chave] = mapeador[lista_numerica[i]]
         else:
             pedido[chave] = mapeador[lista_numerica[i]] + pedido[chave]
+
+#   Printa as entidades que foram detectadas no pedido.
+def printa_itens(pedido_local, frase):
+
+    lista_numerica = pedido_local['num']
+    lista_pedidos = pedido_local['pedidos']
+
+    for i in range(len(lista_pedidos)):
+        if(i == (len(lista_pedidos) - 2)):
+            print(lista_numerica[i], lista_pedidos[i],'e ', end='')
+        elif( i == (len(lista_pedidos) - 1)):
+            print(lista_numerica[i], lista_pedidos[i],frase)
+        else:
+            print(lista_numerica[i], lista_pedidos[i],', ', end='')

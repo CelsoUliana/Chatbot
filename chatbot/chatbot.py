@@ -126,28 +126,36 @@ while(True):
 
 
     if intencao == 'pedido':
+        
+        #   Tratamento de texto, tudo minusculo(caso contrario, todas entidades maisculas deveriam ser incluidas no arquivo de entidade).
+        texto = texto.lower()
+        texto = texto.replace(',', '')
+
         #   Reconhece as entidades basicas, igual à descrição do trabalho.
         pedido_local = funcoes.reconhece_entidades(etiquetador, texto)
 
         #   Caso tenha um matching perfeito, ou seja, todos pedidos tenham seus respectivos numeros(está ordenado), mapeia.
-        if((pedido_local is not None) and ('num' in pedido_local) and ('pedidos' in pedido_local)):
+        if((pedido_local is not None) and ('num' in pedido_local) and ('pedidos' in pedido_local) and (len(pedido_local['num']) == len(pedido_local['pedidos']))):
 
             #   Essa função transforma por exemplo (xegg -> x-egg(como está no cardapio)) e dá seu valor, e bota tudo no pedido.
             funcoes.mapeia_itens(pedido_local, mapeador, pedido)
+
+            #   Função de mostrar o que foi pedido ao cliente.
+            funcoes.printa_itens(pedido_local, random.choice(respostas['pedido_frase']))
+
+            #   Resposta padrão pós pedido.
             print(random.choice(respostas['pedido']))
-            
         else:
             print(random.choice(respostas['erro']))
 
 
     if intencao == 'cardapio':
-
         #   Itera pelo cardapio e imprime as chaves(produtos) e valor.
         print(random.choice(respostas['cardapio']))
         for sessao in card:
             print('------- ', sessao, ' ----------')
             for item in card[sessao]:
-                print('\t', item, ' \tR$:', card[sessao][item])
+                print('\t', item, 'R$:', card[sessao][item])
 
     #   Resposta de funcionario.
     if intencao == 'funcionario':
